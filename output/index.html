@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor Glas – Interleaved Reader</title>
+    <style>
+        :root { --primary: #004a99; --accent: #ffc107; --bg: #f0f2f5; }
+        body { font-family: -apple-system, system-ui, sans-serif; margin: 0; background: var(--bg); }
+        .header-box {
+            background: rgba(255,255,255,0.98); padding: 20px 24px;
+            border-bottom: 3px solid var(--primary);
+        }
+        .header-box h1 { margin: 0 0 4px; font-size: 1.4rem; color: var(--primary); }
+        .header-box .subtitle { font-size: 0.85rem; color: #555; }
+        .chapter-list {
+            max-width: 700px; margin: 24px auto; padding: 0 16px;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .chapter-row {
+            display: flex; align-items: center; gap: 12px;
+            background: white; border-radius: 12px; border: 1px solid #ddd;
+            padding: 14px 16px; text-decoration: none; color: inherit;
+        }
+        a.chapter-row.available { cursor: pointer; }
+        a.chapter-row.available:hover { border-color: var(--primary); background: #f0f6ff; }
+        .chapter-row.unavailable { opacity: 0.45; }
+        .ch-num {
+            font-size: 0.7rem; font-weight: bold; color: white;
+            background: var(--primary); border-radius: 50%;
+            width: 24px; height: 24px; display: flex; align-items: center;
+            justify-content: center; flex-shrink: 0;
+        }
+        .chapter-row.unavailable .ch-num { background: #aaa; }
+        .ch-title { flex: 1; font-weight: 600; font-size: 0.95rem; }
+        .ch-meta { font-size: 0.72rem; color: #888; white-space: nowrap; }
+        .ch-arrow { color: var(--primary); font-size: 0.9rem; }
+        .ch-status { font-size: 0.7rem; color: #aaa; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div class="header-box">
+        <h1>Doktor Glas</h1>
+        <div class="subtitle">Hjalmar Söderberg &nbsp;&middot;&nbsp; Interleaved Swedish–English Reader</div>
+    </div>
+    <div class="chapter-list">
+        
+            <a class="chapter-row available" href="doktor-glas-ch1.html">
+                <span class="ch-num">1</span>
+                <span class="ch-title">Doktor Glas</span>
+                <span class="ch-meta">1 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch2.html">
+                <span class="ch-num">2</span>
+                <span class="ch-title">Kapitel 2</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch3.html">
+                <span class="ch-num">3</span>
+                <span class="ch-title">Kapitel 3</span>
+                <span class="ch-meta">25 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch4.html">
+                <span class="ch-num">4</span>
+                <span class="ch-title">Kapitel 4</span>
+                <span class="ch-meta">16 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch5.html">
+                <span class="ch-num">5</span>
+                <span class="ch-title">Kapitel 5</span>
+                <span class="ch-meta">17 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch6.html">
+                <span class="ch-num">6</span>
+                <span class="ch-title">Kapitel 6</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch7.html">
+                <span class="ch-num">7</span>
+                <span class="ch-title">Kapitel 7</span>
+                <span class="ch-meta">31 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch8.html">
+                <span class="ch-num">8</span>
+                <span class="ch-title">Kapitel 8</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <a class="chapter-row available" href="doktor-glas-ch9.html">
+                <span class="ch-num">9</span>
+                <span class="ch-title">Kapitel 9</span>
+                <span class="ch-meta">2 segments</span>
+                <span class="ch-arrow">&#x276F;</span>
+            </a>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">10</span>
+                <span class="ch-title">Kapitel 10</span>
+                <span class="ch-meta">51 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">11</span>
+                <span class="ch-title">Kapitel 11</span>
+                <span class="ch-meta">29 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">12</span>
+                <span class="ch-title">Kapitel 12</span>
+                <span class="ch-meta">104 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">13</span>
+                <span class="ch-title">Kapitel 13</span>
+                <span class="ch-meta">53 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">14</span>
+                <span class="ch-title">Kapitel 14</span>
+                <span class="ch-meta">11 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">15</span>
+                <span class="ch-title">Kapitel 15</span>
+                <span class="ch-meta">7 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">16</span>
+                <span class="ch-title">Kapitel 16</span>
+                <span class="ch-meta">23 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">17</span>
+                <span class="ch-title">Kapitel 17</span>
+                <span class="ch-meta">16 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">18</span>
+                <span class="ch-title">Kapitel 18</span>
+                <span class="ch-meta">8 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">19</span>
+                <span class="ch-title">Kapitel 19</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">20</span>
+                <span class="ch-title">Kapitel 20</span>
+                <span class="ch-meta">10 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">21</span>
+                <span class="ch-title">Kapitel 21</span>
+                <span class="ch-meta">18 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">22</span>
+                <span class="ch-title">Kapitel 22</span>
+                <span class="ch-meta">53 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">23</span>
+                <span class="ch-title">Kapitel 23</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">24</span>
+                <span class="ch-title">Kapitel 24</span>
+                <span class="ch-meta">2 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">25</span>
+                <span class="ch-title">Kapitel 25</span>
+                <span class="ch-meta">15 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">26</span>
+                <span class="ch-title">Kapitel 26</span>
+                <span class="ch-meta">23 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">27</span>
+                <span class="ch-title">Kapitel 27</span>
+                <span class="ch-meta">81 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">28</span>
+                <span class="ch-title">Kapitel 28</span>
+                <span class="ch-meta">6 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">29</span>
+                <span class="ch-title">Kapitel 29</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">30</span>
+                <span class="ch-title">Kapitel 30</span>
+                <span class="ch-meta">11 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">31</span>
+                <span class="ch-title">Kapitel 31</span>
+                <span class="ch-meta">6 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">32</span>
+                <span class="ch-title">Kapitel 32</span>
+                <span class="ch-meta">28 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">33</span>
+                <span class="ch-title">Kapitel 33</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">34</span>
+                <span class="ch-title">Kapitel 34</span>
+                <span class="ch-meta">4 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">35</span>
+                <span class="ch-title">Kapitel 35</span>
+                <span class="ch-meta">47 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">36</span>
+                <span class="ch-title">Kapitel 36</span>
+                <span class="ch-meta">66 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">37</span>
+                <span class="ch-title">Kapitel 37</span>
+                <span class="ch-meta">24 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">38</span>
+                <span class="ch-title">Kapitel 38</span>
+                <span class="ch-meta">27 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">39</span>
+                <span class="ch-title">Kapitel 39</span>
+                <span class="ch-meta">4 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">40</span>
+                <span class="ch-title">Kapitel 40</span>
+                <span class="ch-meta">75 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">41</span>
+                <span class="ch-title">Kapitel 41</span>
+                <span class="ch-meta">2 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">42</span>
+                <span class="ch-title">Kapitel 42</span>
+                <span class="ch-meta">3 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">43</span>
+                <span class="ch-title">Kapitel 43</span>
+                <span class="ch-meta">13 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">44</span>
+                <span class="ch-title">Kapitel 44</span>
+                <span class="ch-meta">2 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">45</span>
+                <span class="ch-title">Kapitel 45</span>
+                <span class="ch-meta">13 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+
+            <div class="chapter-row unavailable">
+                <span class="ch-num">46</span>
+                <span class="ch-title">Kapitel 46</span>
+                <span class="ch-meta">2 segments</span>
+                <span class="ch-status">coming soon</span>
+            </div>
+    </div>
+</body>
+</html>
