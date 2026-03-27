@@ -17,7 +17,7 @@ from interleaver.pipeline import run_from_text
 from interleaver.etymology import EtymologyCache
 
 EPUB_PATH = os.path.join(os.path.dirname(__file__), 'SöderbergH_DoktorGlas.epub')
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'output')
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'docs')
 ETYMOLOGY_CACHE_PATH = os.path.join(os.path.dirname(__file__), 'etymology_cache.json')
 
 def main():

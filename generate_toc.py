@@ -10,7 +10,7 @@ from epubkit.epub import extract_chapters
 from epubkit.segment import segment_chapter
 
 EPUB_PATH = os.path.join(os.path.dirname(__file__), 'SöderbergH_DoktorGlas.epub')
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'output')
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'docs')
 
 
 def main():
