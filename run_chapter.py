@@ -50,6 +50,7 @@ def main():
         title=f'Doktor Glas – {chapter.title}',
         subtitle='Hjalmar Söderberg',
         etymology_cache=etymology_cache,
+        ep_key=f'doktor-glas.ch{args.chapter}',
     )
 
 if __name__ == '__main__':
